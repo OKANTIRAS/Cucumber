@@ -5,7 +5,8 @@ public class Question_05_39 {
 
         double sale = 0;
         double commission = 0;
-        while ((commission * 12) <= 30000) {
+        // 30000 - base salary = 25000
+        while (commission <= 25000) {
             if (sale <= 5000) {
                 commission = 5000 * 8 / 100;
             } else if (5000 < sale && sale <= 10000) {
@@ -13,8 +14,8 @@ public class Question_05_39 {
             } else {
                 commission = (5000 * 8 / 100) + (5000 * 10 / 100) + ((sale - 10000) * 12 / 100);
             }
-            sale++;
+            sale += 0.01;
         }
-        System.out.println("Minimum sales to earn $30,000: $" + sale);
+        System.out.printf("Minimum sales to earn $30,000: $%.2f",sale);
     }
 }
