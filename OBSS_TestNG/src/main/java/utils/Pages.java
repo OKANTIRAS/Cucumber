@@ -1,41 +1,18 @@
 package utils;
 
-import pages.InarAcademyHomePage;
-import pages.TargetMarketHomePage;
-import pages.TargetMarketLogOutPage;
-import pages.TargetMarketLoginPage;
+import pages.HomePage;
 
 public class Pages {
 
-	private InarAcademyHomePage inarAcademyHomePage;
-
-	private TargetMarketLoginPage targetMarketLoginPage;
-
-	private TargetMarketHomePage targetMarketHomePage;
-
-	private TargetMarketLogOutPage targetMarketLogOutPage;
+	private HomePage homePage;
 
 	public Pages() {
-		inarAcademyHomePage = new InarAcademyHomePage();
-		targetMarketLoginPage = new TargetMarketLoginPage();
-		targetMarketHomePage = new TargetMarketHomePage();
-		targetMarketLogOutPage = new TargetMarketLogOutPage();
+		homePage = new HomePage();
+
 	}
 
-	public InarAcademyHomePage getInarAcademyHomePage() {
-		return inarAcademyHomePage;
-	}
-
-	public TargetMarketLoginPage getTargetMarketLoginPage() {
-		return targetMarketLoginPage;
-	}
-
-	public TargetMarketHomePage getTargetMarketHomePage() {
-		return targetMarketHomePage;
-	}
-
-	public TargetMarketLogOutPage getTargetMarketLogOutPage() {
-		return targetMarketLogOutPage;
+	public HomePage getHomePage() {
+		return homePage;
 	}
 
 }

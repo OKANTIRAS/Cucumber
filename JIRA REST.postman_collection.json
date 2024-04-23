@@ -1,0 +1,706 @@
+{
+	"info": {
+		"_postman_id": "66f8c40a-e355-4ba8-a72c-463346ab439b",
+		"name": "JIRA REST",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25678002"
+	},
+	"item": [
+		{
+			"name": "project",
+			"item": [
+				{
+					"name": "Get Recent Projects",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{connection}}/rest/api/3/project/recent",
+							"host": [
+								"{{connection}}"
+							],
+							"path": [
+								"rest",
+								"api",
+								"3",
+								"project",
+								"recent"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Recent Projects Copy",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "https://{{domain}}.atlassian.net/rest/api/3/task/T1-180",
+							"protocol": "https",
+							"host": [
+								"{{domain}}",
+								"atlassian",
+								"net"
+							],
+							"path": [
+								"rest",
+								"api",
+								"3",
+								"task",
+								"T1-180"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Get All Users",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "https://{{domain}}.atlassian.net/rest/api/3/users/search",
+							"protocol": "https",
+							"host": [
+								"{{domain}}",
+								"atlassian",
+								"net"
+							],
+							"path": [
+								"rest",
+								"api",
+								"3",
+								"users",
+								"search"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "https://{{domain}}.atlassian.net/rest/api/3/user?accountId={{accountID}}",
+							"protocol": "https",
+							"host": [
+								"{{domain}}",
+								"atlassian",
+								"net"
+							],
+							"path": [
+								"rest",
+								"api",
+								"3",
+								"user"
+							],
+							"query": [
+								{
+									"key": "accountId",
+									"value": "{{accountID}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User Email",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "https://{{domain}}.atlassian.net/rest/api/3/user/email?accountId=712020:eccd5393-9c48-4ca4-9bdf-f230323c79dc",
+							"protocol": "https",
+							"host": [
+								"{{domain}}",
+								"atlassian",
+								"net"
+							],
+							"path": [
+								"rest",
+								"api",
+								"3",
+								"user",
+								"email"
+							],
+							"query": [
+								{
+									"key": "accountId",
+									"value": "712020:eccd5393-9c48-4ca4-9bdf-f230323c79dc"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create User",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"emailAddress\": \"testUser@atlassian.com\"\n}"
+						},
+						"url": {
+							"raw": "https://{{domain}}.atlassian.net/rest/api/3/user",
+							"protocol": "https",
+							"host": [
+								"{{domain}}",
+								"atlassian",
+								"net"
+							],
+							"path": [
+								"rest",
+								"api",
+								"3",
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete User",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://{{domain}}.atlassian.net/rest/api/3/user?accountId={{accountIDToDelete}}",
+							"protocol": "https",
+							"host": [
+								"{{domain}}",
+								"atlassian",
+								"net"
+							],
+							"path": [
+								"rest",
+								"api",
+								"3",
+								"user"
+							],
+							"query": [
+								{
+									"key": "accountId",
+									"value": "{{accountIDToDelete}}"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Issue",
+			"item": [
+				{
+					"name": "Attachment",
+					"item": [
+						{
+							"name": "Add Attachment",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "X-Atlassian-Token",
+										"value": "no-check"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "file",
+											"type": "file",
+											"src": "/C:/Users/alioz/Desktop/authorization.png"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://{{domain}}.atlassian.net/rest/api/3/issue/{{IssueKEY}}/attachments",
+									"protocol": "https",
+									"host": [
+										"{{domain}}",
+										"atlassian",
+										"net"
+									],
+									"path": [
+										"rest",
+										"api",
+										"3",
+										"issue",
+										"{{IssueKEY}}",
+										"attachments"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Attachment",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "https://{{domain}}.atlassian.net/rest/api/3/attachment/{{attachmentID}}",
+									"protocol": "https",
+									"host": [
+										"{{domain}}",
+										"atlassian",
+										"net"
+									],
+									"path": [
+										"rest",
+										"api",
+										"3",
+										"attachment",
+										"{{attachmentID}}"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Comments",
+					"item": [
+						{
+							"name": "Add Comment",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"body\": {\n    \"content\": [\n      {\n        \"content\": [\n          {\n            \"text\": \"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eget venenatis elit. Duis eu justo eget augue iaculis fermentum. Sed semper quam laoreet nisi egestas at posuere augue semper.\",\n            \"type\": \"text\"\n          }\n        ],\n        \"type\": \"paragraph\"\n      }\n    ],\n    \"type\": \"doc\",\n    \"version\": 1\n  }\n}"
+								},
+								"url": {
+									"raw": "https://{{domain}}.atlassian.net/rest/api/3/issue/{{IssueKEY}}/comment",
+									"protocol": "https",
+									"host": [
+										"{{domain}}",
+										"atlassian",
+										"net"
+									],
+									"path": [
+										"rest",
+										"api",
+										"3",
+										"issue",
+										"{{IssueKEY}}",
+										"comment"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Comments",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "https://{{domain}}.atlassian.net/rest/api/3/issue/{{IssueKEY}}/comment/",
+									"protocol": "https",
+									"host": [
+										"{{domain}}",
+										"atlassian",
+										"net"
+									],
+									"path": [
+										"rest",
+										"api",
+										"3",
+										"issue",
+										"{{IssueKEY}}",
+										"comment",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Comment",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "https://{{domain}}.atlassian.net/rest/api/3/issue/{{IssueKEY}}/comment/{{commentID}}",
+									"protocol": "https",
+									"host": [
+										"{{domain}}",
+										"atlassian",
+										"net"
+									],
+									"path": [
+										"rest",
+										"api",
+										"3",
+										"issue",
+										"{{IssueKEY}}",
+										"comment",
+										"{{commentID}}"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Search",
+					"item": [
+						{
+							"name": "Picker Suggestions",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "https://{{domain}}.atlassian.net/rest/api/3/issue/picker?query=Test",
+									"protocol": "https",
+									"host": [
+										"{{domain}}",
+										"atlassian",
+										"net"
+									],
+									"path": [
+										"rest",
+										"api",
+										"3",
+										"issue",
+										"picker"
+									],
+									"query": [
+										{
+											"key": "query",
+											"value": "Test"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Create Issue",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"fields\": {\n      \"project\": {\n        \"key\": \"T1\"\n      },\n      \"summary\": \"TEST - THIS IS THE SUMMARY OF THE ISSUE\",\n      \"labels\": [\n        \"POST\",\n        \"CREATE-ISSUE\"\n      ],\n      \"description\": {\n        \"type\": \"doc\",\n        \"version\": 1,\n        \"content\": [\n          {\n            \"type\": \"paragraph\",\n            \"content\": [\n              {\n                \"text\": \"THIS IS THE DESCRIPTION OF THE ISSUE\",\n                \"type\": \"text\"\n              }\n            ]\n          }\n        ]\n      },\n      \"issuetype\": {\n        \"name\": \"Story\"\n      }\n    }\n  }"
+						},
+						"url": {
+							"raw": "https://{{domain}}.atlassian.net/rest/api/3/issue",
+							"protocol": "https",
+							"host": [
+								"{{domain}}",
+								"atlassian",
+								"net"
+							],
+							"path": [
+								"rest",
+								"api",
+								"3",
+								"issue"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Issue",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "https://inaracademy.atlassian.net/rest/api/3/issue/{{IssueKEY}}",
+							"protocol": "https",
+							"host": [
+								"inaracademy",
+								"atlassian",
+								"net"
+							],
+							"path": [
+								"rest",
+								"api",
+								"3",
+								"issue",
+								"{{IssueKEY}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "edit issue",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"fields\": {\n  },\n  \"update\": {\n    \"labels\": [\n      {\n        \"add\": \"PUT\"\n      },\n      {\n        \"remove\": \"POST\"\n      },\n      {\n        \"remove\": \"CREATE-ISSUE\"\n      }\n    ],\n    \"summary\": [\n      {\n        \"set\": \"TEST - EDIT ISSUE\"\n      }\n    ]\n  }\n}"
+						},
+						"url": {
+							"raw": "https://inaracademy.atlassian.net/rest/api/3/issue/{{IssueKEY}}",
+							"protocol": "https",
+							"host": [
+								"inaracademy",
+								"atlassian",
+								"net"
+							],
+							"path": [
+								"rest",
+								"api",
+								"3",
+								"issue",
+								"{{IssueKEY}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User Search",
+			"item": [
+				{
+					"name": "Find Users",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "https://{{domain}}.atlassian.net/rest/api/3/user/search?query=academy",
+							"protocol": "https",
+							"host": [
+								"{{domain}}",
+								"atlassian",
+								"net"
+							],
+							"path": [
+								"rest",
+								"api",
+								"3",
+								"user",
+								"search"
+							],
+							"query": [
+								{
+									"key": "query",
+									"value": "academy"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User Properties",
+			"item": [
+				{
+					"name": "Find Users Copy",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "https://{{domain}}.atlassian.net/rest/api/3/user/properties?accountId=712020:6e01eebb-5033-406c-ab23-43795c6bcda6",
+							"protocol": "https",
+							"host": [
+								"{{domain}}",
+								"atlassian",
+								"net"
+							],
+							"path": [
+								"rest",
+								"api",
+								"3",
+								"user",
+								"properties"
+							],
+							"query": [
+								{
+									"key": "accountId",
+									"value": "712020:6e01eebb-5033-406c-ab23-43795c6bcda6"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "basic",
+		"basic": [
+			{
+				"key": "password",
+				"value": "",
+				"type": "string"
+			},
+			{
+				"key": "username",
+				"value": "",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "IssueKEY",
+			"value": "T1-178",
+			"disabled": true
+		},
+		{
+			"key": "domain",
+			"value": "inaracademy",
+			"disabled": true
+		},
+		{
+			"key": "attachmentID",
+			"value": "10067",
+			"disabled": true
+		},
+		{
+			"key": "commentID",
+			"value": "10054",
+			"disabled": true
+		},
+		{
+			"key": "accountID",
+			"value": "712020:eccd5393-9c48-4ca4-9bdf-f230323c79dc",
+			"disabled": true
+		},
+		{
+			"key": "projectIdOrKey",
+			"value": "T1",
+			"disabled": true
+		},
+		{
+			"key": "connection",
+			"value": "https://inaracademy.atlassian.net/",
+			"disabled": true
+		}
+	]
+}

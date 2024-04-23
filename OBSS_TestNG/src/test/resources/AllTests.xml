@@ -1,120 +1,13 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="TargetMarket">
-    <test name="Target Market All Tests - Chrome">
+<suite name="OBSS">
+    <listeners>
+        <listener class-name="listeners.ExtentReportListener"/>
+    </listeners>
+    <test name="OBSS All Tests - Chrome">
         <parameter name="browserType" value="chrome"/>
         <classes>
-            <class name="loginProcessTests.TM_LP_01"/>
-            <class name="loginProcessTests.TM_LP_02"/>
-            <class name="loginProcessTests.TM_LP_03"/>
-            <class name="loginProcessTests.TM_LP_04"/>
-            <class name="homePageTest.TM_OP_01"/>
-            <class name="homePageTest.TM_OP_02"/>
-            <class name="homePageTest.TM_OP_03"/>
-            <class name="orderProcessTests.furnitureTests.TM_FU_01"/>
-            <class name="orderProcessTests.furnitureTests.TM_FU_02"/>
-            <class name="orderProcessTests.furnitureTests.TM_FU_03"/>
-            <class name="orderProcessTests.groceriesTests.TM_GR_01"/>
-            <class name="orderProcessTests.groceriesTests.TM_GR_02"/>
-            <class name="orderProcessTests.groceriesTests.TM_GR_03"/>
-            <class name="orderProcessTests.homeDecorationTests.TM_HD_01"/>
-            <class name="orderProcessTests.homeDecorationTests.TM_HD_02"/>
-            <class name="orderProcessTests.homeDecorationTests.TM_HD_03"/>
-            <class name="orderProcessTests.laptopTests.TM_LA_01"/>
-            <class name="orderProcessTests.laptopTests.TM_LA_02"/>
-            <class name="orderProcessTests.laptopTests.TM_LA_03"/>
-            <class name="orderProcessTests.skinCareTests.TM_SC_01"/>
-            <class name="orderProcessTests.skinCareTests.TM_SC_02"/>
-            <class name="orderProcessTests.skinCareTests.TM_SC_03"/>
-            <class name="orderProcessTests.smartphonesTests.TM_SM_01"/>
-            <class name="orderProcessTests.smartphonesTests.TM_SM_02"/>
-            <class name="orderProcessTests.smartphonesTests.TM_SM_03"/>
-            <class name="orderProcessTests.TopsTests.TM_TO_01"/>
-            <class name="orderProcessTests.TopsTests.TM_TO_02"/>
-            <class name="orderProcessTests.TopsTests.TM_TO_03"/>
-            <class name="orderProcessTests.womenDressTests.TM_WD_01"/>
-            <class name="orderProcessTests.womenDressTests.TM_WD_02"/>
-            <class name="orderProcessTests.womenDressTests.TM_WD_03"/>
-            <class name="orderProcessTests.womenShoesTests.TM_WS_01"/>
-            <class name="orderProcessTests.womenShoesTests.TM_WS_02"/>
-            <class name="orderProcessTests.womenShoesTests.TM_WS_03"/>
+            <class name="HomePageTest"/>
         </classes>
     </test>
-    <!--<test name="Target Market All Tests - Edge">
-        <parameter name="browserType" value="edge"/>
-        <classes>
-            <class name="loginProcessTests.TM_LP_01"/>
-            <class name="loginProcessTests.TM_LP_02"/>
-            <class name="loginProcessTests.TM_LP_03"/>
-            <class name="loginProcessTests.TM_LP_04"/>
-            <class name="homePageTest.TM_OP_01"/>
-            <class name="homePageTest.TM_OP_02"/>
-            <class name="homePageTest.TM_OP_03"/>
-            <class name="orderProcessTests.furnitureTests.TM_FU_01"/>
-            <class name="orderProcessTests.furnitureTests.TM_FU_02"/>
-            <class name="orderProcessTests.furnitureTests.TM_FU_03"/>
-            <class name="orderProcessTests.groceriesTests.TM_GR_01"/>
-            <class name="orderProcessTests.groceriesTests.TM_GR_02"/>
-            <class name="orderProcessTests.groceriesTests.TM_GR_03"/>
-            <class name="orderProcessTests.homeDecorationTests.TM_HD_01"/>
-            <class name="orderProcessTests.homeDecorationTests.TM_HD_02"/>
-            <class name="orderProcessTests.homeDecorationTests.TM_HD_03"/>
-            <class name="orderProcessTests.laptopTests.TM_LA_01"/>
-            <class name="orderProcessTests.laptopTests.TM_LA_02"/>
-            <class name="orderProcessTests.laptopTests.TM_LA_03"/>
-            <class name="orderProcessTests.skinCareTests.TM_SC_01"/>
-            <class name="orderProcessTests.skinCareTests.TM_SC_02"/>
-            <class name="orderProcessTests.skinCareTests.TM_SC_03"/>
-            <class name="orderProcessTests.smartphonesTests.TM_SM_01"/>
-            <class name="orderProcessTests.smartphonesTests.TM_SM_02"/>
-            <class name="orderProcessTests.smartphonesTests.TM_SM_03"/>
-            <class name="orderProcessTests.TopsTests.TM_TO_01"/>
-            <class name="orderProcessTests.TopsTests.TM_TO_02"/>
-            <class name="orderProcessTests.TopsTests.TM_TO_03"/>
-            <class name="orderProcessTests.womenDressTests.TM_WD_01"/>
-            <class name="orderProcessTests.womenDressTests.TM_WD_02"/>
-            <class name="orderProcessTests.womenDressTests.TM_WD_03"/>
-            <class name="orderProcessTests.womenShoesTests.TM_WS_01"/>
-            <class name="orderProcessTests.womenShoesTests.TM_WS_02"/>
-            <class name="orderProcessTests.womenShoesTests.TM_WS_03"/>
-        </classes>
-    </test>
-    <test name="Target Market All Tests - Firefox">
-        <parameter name="browserType" value="firefox"/>
-        <classes>
-            <class name="loginProcessTests.TM_LP_01"/>
-            <class name="loginProcessTests.TM_LP_02"/>
-            <class name="loginProcessTests.TM_LP_03"/>
-            <class name="loginProcessTests.TM_LP_04"/>
-            <class name="homePageTest.TM_OP_01"/>
-            <class name="homePageTest.TM_OP_02"/>
-            <class name="homePageTest.TM_OP_03"/>
-            <class name="orderProcessTests.furnitureTests.TM_FU_01"/>
-            <class name="orderProcessTests.furnitureTests.TM_FU_02"/>
-            <class name="orderProcessTests.furnitureTests.TM_FU_03"/>
-            <class name="orderProcessTests.groceriesTests.TM_GR_01"/>
-            <class name="orderProcessTests.groceriesTests.TM_GR_02"/>
-            <class name="orderProcessTests.groceriesTests.TM_GR_03"/>
-            <class name="orderProcessTests.homeDecorationTests.TM_HD_01"/>
-            <class name="orderProcessTests.homeDecorationTests.TM_HD_02"/>
-            <class name="orderProcessTests.homeDecorationTests.TM_HD_03"/>
-            <class name="orderProcessTests.laptopTests.TM_LA_01"/>
-            <class name="orderProcessTests.laptopTests.TM_LA_02"/>
-            <class name="orderProcessTests.laptopTests.TM_LA_03"/>
-            <class name="orderProcessTests.skinCareTests.TM_SC_01"/>
-            <class name="orderProcessTests.skinCareTests.TM_SC_02"/>
-            <class name="orderProcessTests.skinCareTests.TM_SC_03"/>
-            <class name="orderProcessTests.smartphonesTests.TM_SM_01"/>
-            <class name="orderProcessTests.smartphonesTests.TM_SM_02"/>
-            <class name="orderProcessTests.smartphonesTests.TM_SM_03"/>
-            <class name="orderProcessTests.TopsTests.TM_TO_01"/>
-            <class name="orderProcessTests.TopsTests.TM_TO_02"/>
-            <class name="orderProcessTests.TopsTests.TM_TO_03"/>
-            <class name="orderProcessTests.womenDressTests.TM_WD_01"/>
-            <class name="orderProcessTests.womenDressTests.TM_WD_02"/>
-            <class name="orderProcessTests.womenDressTests.TM_WD_03"/>
-            <class name="orderProcessTests.womenShoesTests.TM_WS_01"/>
-            <class name="orderProcessTests.womenShoesTests.TM_WS_02"/>
-            <class name="orderProcessTests.womenShoesTests.TM_WS_03"/>
-        </classes>
-    </test>-->
+
 </suite>

@@ -7,7 +7,7 @@ import org.testng.asserts.SoftAssert;
 import utils.Driver;
 import utils.Pages;
 
-public abstract class Hooks {
+public class Hooks {
 
 	protected static Pages pages;
 
@@ -24,26 +24,5 @@ public abstract class Hooks {
 	public static void tearDown() {
 		Driver.closeDriver();
 	}
-
-	public void wait(int secs) {
-		try {
-			Thread.sleep(secs * 1000L);
-		}
-		catch (InterruptedException e) {
-			throw new RuntimeException(e);
-		}
-	}
-
-	public abstract void onStart(ITestContext context);
-
-	public abstract void onTestStart(ITestResult result);
-
-	public abstract void onTestSuccess(ITestResult result);
-
-	public abstract void onTestFailure(ITestResult result);
-
-	public abstract void onTestSkipped(ITestResult result);
-
-	public abstract void onFinish(ITestContext context);
 
 }
