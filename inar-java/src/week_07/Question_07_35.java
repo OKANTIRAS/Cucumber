@@ -92,6 +92,7 @@ public class Question_07_35 {
     }
 
     private static String findWord() {
+
         String[] words = {"write", "that", "arrays", "method", "hover", "actual"};
         return words[(int) (Math.random() * words.length)];
     }

@@ -58,4 +58,5 @@ public class Question_08_30 {
 
         public static void printResult(double[] result) {
             System.out.println("x is " + result[0] + " and y is " + result[1]);
+        }
 }

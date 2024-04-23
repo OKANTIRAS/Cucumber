@@ -10,10 +10,12 @@ public class Triangle extends GeometricObject{
         this.side2 = 1;
         this.side3 = 1;
     }
-    public Triangle(double side1, double side2, double side3){
+
+    public Triangle(double side1, double side2, double side3) {
         this.side1 = side1;
         this.side2 = side2;
         this.side3 = side3;
+
     }
 
     public double getSide1() {

@@ -10,6 +10,6 @@ public class Question_10_28 {
         System.out.println("Substring of s3 beginning index 10---> " + s3.substring(10));
         s2.reverse();
         System.out.println("S2 to upper case --------------------> " + s2.toUpperCase());
-    
+
     }
 }
